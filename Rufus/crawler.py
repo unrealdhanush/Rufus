@@ -3,6 +3,8 @@ import aiohttp
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import logging
+import ssl
+import certifi
 
 logger = logging.getLogger(__name__)
 
@@ -12,6 +14,7 @@ class Crawler:
         self.max_pages = max_pages
         self.visited = set()
         self.pages = []
+        self.ssl_context = ssl.create_default_context(cafile=certifi.where())
 
     async def fetch(self, session, url):
         try:

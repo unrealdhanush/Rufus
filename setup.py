@@ -12,7 +12,9 @@ setup(
         'tldextract',
         'numpy',
         'pandas',
-        'nltk'
+        'nltk',
+        'sentence-transformers',
+        'tf-keras'
     ],
     entry_points='''
         [console_scripts]

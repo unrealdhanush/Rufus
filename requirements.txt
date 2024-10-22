@@ -6,3 +6,5 @@ tldextract
 numpy
 pandas
 nltk
+sentence-transformers
+tf-keras

@@ -1,9 +1,13 @@
 from .parser import Parser
+from sentence_transformers import SentenceTransformer, util
 
 class Synthesizer:
-    def __init__(self, instructions):
-        self.instructions = instructions.lower()
+    def __init__(self, instructions, model_name='all-MiniLM-L6-v2', similarity_threshold=0.5):
+        self.instructions = instructions
         self.parser = Parser()
+        self.model = SentenceTransformer(model_name)
+        self.instruction_embedding = self.model.encode(instructions, convert_to_tensor=True)
+        self.similarity_threshold = similarity_threshold
 
     def synthesize(self, pages):
         documents = []
@@ -18,5 +22,7 @@ class Synthesizer:
         return documents
 
     def is_relevant(self, content):
-        keywords = self.instructions.split()
-        return any(keyword in content.lower() for keyword in keywords)
+        content_embedding = self.model.encode(content, convert_to_tensor=True)
+        similarity = util.cos_sim(self.instruction_embedding, content_embedding)
+        similarity_score = similarity.item()
+        return similarity_score >= self.similarity_threshold
