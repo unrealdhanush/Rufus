@@ -5,7 +5,7 @@ async def main():
     client = RufusClient(api_key='your_api_key')
     instructions = "We're making a chatbot for the HR in San Francisco."
     documents = await client.scrape("https://sfgov.org", instructions=instructions)
-    # Save the documents
+
     import json
     with open('sfgov_data.json', 'w') as f:
         json.dump(documents, f, indent=2)

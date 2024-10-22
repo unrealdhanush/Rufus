@@ -7,7 +7,6 @@ class RufusClient:
         self.api_key = api_key or os.getenv('RUFUS_API_KEY')
         if not self.api_key:
             raise ValueError("API key is required")
-        # Additional authentication setup if needed
 
     async def scrape(self, url, instructions, max_depth=2, max_pages=100):
         crawler = Crawler(max_depth=max_depth, max_pages=max_pages)

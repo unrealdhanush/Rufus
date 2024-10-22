@@ -18,6 +18,5 @@ class Synthesizer:
         return documents
 
     def is_relevant(self, content):
-        # Simple keyword matching for relevance; can be replaced with NLP models
         keywords = self.instructions.split()
         return any(keyword in content.lower() for keyword in keywords)

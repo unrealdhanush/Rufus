@@ -1,13 +1,18 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='rufus-ai',
+    name='Rufus',
     version='0.1.0',
     packages=find_packages(),
     install_requires=[
         'aiohttp',
         'beautifulsoup4',
-        # Other dependencies
+        'aiohttp-socks',
+        'requests',
+        'tldextract',
+        'numpy',
+        'pandas',
+        'nltk'
     ],
     entry_points='''
         [console_scripts]
