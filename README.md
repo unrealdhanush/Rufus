@@ -1,1 +1,1 @@
-# rufus-ai
+# Rufus AI
