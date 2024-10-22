@@ -486,5 +486,3 @@ if __name__ == '__main__':
 - **Client Interface:** Provides a user-friendly API to initiate the scraping process and obtain results.
 
 - **Workflow:** The components work together to crawl websites, extract relevant data, and present it in a structured format for easy integration into AI applications.
-
----
