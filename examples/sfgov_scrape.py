@@ -1,5 +1,5 @@
 import asyncio
-from Rufus import RufusClient
+from core.client import RufusClient
 
 async def main():
     client = RufusClient(api_key='your_api_key')
@@ -11,7 +11,7 @@ async def main():
     documents = await client.scrape("https://sfgov.org", instructions=instructions)
 
     import json
-    with open('sfgov_data.json', 'w') as f:
+    with open('output/sfgov_data.json', 'w') as f:
         json.dump(documents, f, indent=2)
 
 if __name__ == '__main__':

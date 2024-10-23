@@ -21,7 +21,7 @@ class Parser:
             element.decompose()
 
         # Remove comments
-        for comment in soup.findAll(text=lambda text: isinstance(text, Comment)):
+        for comment in soup.findAll(string=lambda string: isinstance(string, Comment)):
             comment.extract()
 
         # Extract main content
@@ -36,8 +36,8 @@ class Parser:
                 text = soup.get_text(separator=' ', strip=True)
 
         # Preprocess text
-        text = text.lower()  # Lowercase
-        text = re.sub(r'[^a-zA-Z\s]', '', text)  # Remove punctuation and numbers
+        text = text.lower()
+        text = re.sub(r'[^a-zA-Z\s]', '', text)
         tokens = text.split()
         tokens = [self.lemmatizer.lemmatize(word) for word in tokens if word not in self.stop_words]
         processed_text = ' '.join(tokens)

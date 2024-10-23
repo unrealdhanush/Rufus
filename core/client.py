@@ -1,6 +1,9 @@
 import os
+from dotenv import load_dotenv
 from .crawler import Crawler
 from .synthesizer import Synthesizer
+
+load_dotenv()
 
 class RufusClient:
     def __init__(self, api_key=None):

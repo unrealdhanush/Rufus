@@ -14,7 +14,8 @@ setup(
         'pandas',
         'nltk',
         'sentence-transformers',
-        'tf-keras'
+        'tf-keras',
+        'python-dotenv'
     ],
     python_requires='>=3.8',
     author='Dhanush Balakrishna',
