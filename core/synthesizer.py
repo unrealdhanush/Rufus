@@ -6,8 +6,16 @@ class Synthesizer:
         self.instructions = instructions
         self.model = SentenceTransformer(model_name)
         self.similarity_threshold = similarity_threshold
-        self.instruction_embedding = self.model.encode(instructions, convert_to_tensor=True, normalize_embeddings=True)
+        self.instruction_embedding = self.model.encode(
+            instructions, convert_to_tensor=True, normalize_embeddings=True)
         self.parser = Parser()
+
+    def is_relevant(self, content):
+        content_embedding = self.model.encode(
+            content, convert_to_tensor=True, normalize_embeddings=True)
+        similarity_score = util.pytorch_cos_sim(
+            self.instruction_embedding, content_embedding)[0][0].item()
+        return similarity_score >= self.similarity_threshold
 
     def synthesize(self, pages):
         documents = []
@@ -22,7 +30,8 @@ class Synthesizer:
         if not contents:
             return documents
 
-        content_embeddings = self.model.encode(contents, batch_size=8, convert_to_tensor=True, normalize_embeddings=True)
+        content_embeddings = self.model.encode(
+            contents, batch_size=8, convert_to_tensor=True, normalize_embeddings=True)
         similarities = util.pytorch_cos_sim(self.instruction_embedding, content_embeddings)[0]
 
         for idx, similarity_score in enumerate(similarities):
