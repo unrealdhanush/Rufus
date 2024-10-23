@@ -14,6 +14,8 @@ class RufusClient:
     async def scrape(self, url, instructions, max_depth=2, max_pages=100):
         crawler = Crawler(max_depth=max_depth, max_pages=max_pages)
         pages = await crawler.crawl(url)
+        print(f"Crawled {len(pages)} pages.")
         synthesizer = Synthesizer(instructions, similarity_threshold=0.2)
         documents = synthesizer.synthesize(pages)
+        print(f"Synthesized {len(documents)} documents.")
         return documents

@@ -7,14 +7,14 @@ class TestCrawler(unittest.TestCase):
         self.crawler = Crawler(max_depth=2, max_pages=10)
 
     async def test_basic_crawl(self):
-        result = await self.crawler.crawl('https://example.com')
+        result = await self.crawler.crawl('https://sfgov.org')
         self.assertGreater(len(result), 0, "Crawler should return some pages")
         self.assertIn('url', result[0], "Each result should have a URL")
         self.assertIn('html', result[0], "Each result should have HTML content")
 
     async def test_handle_ssl_error(self):
         result = await self.crawler.crawl('https://expired.badssl.com')
-        self.assertEqual(len(result), 0, "Crawler should skip pages with SSL issues")
+        self.assertEqual(len(result), 0, "Crawler should skip pages with SSL issues") 
 
     async def test_non_html_content(self):
         result = await self.crawler.crawl('https://example.com/somefile.pdf')

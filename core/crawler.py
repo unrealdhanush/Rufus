@@ -18,15 +18,21 @@ class Crawler:
 
     async def fetch(self, session, url):
         try:
-            async with session.get(url, timeout=10) as response:
+            async with session.get(url, ssl=None, timeout=10) as response:
                 if response.status == 200 and 'text/html' in response.headers.get('Content-Type', ''):
                     text = await response.text()
                     return text
                 else:
                     print(f"Skipped non-HTML content at {url}")
+        except aiohttp.ClientConnectorCertificateError as e:
+            print(f"SSL certificate error when fetching {url}: {e}")
+            return ''
+        except aiohttp.ClientConnectorSSLError as e:
+            print(f"SSL error when fetching {url}: {e}")
+            return ''
         except Exception as e:
             print(f"Failed to fetch {url}: {e}")
-            logger.error(f"Failed to fetch {url}: {e}")
+            return ''
         return ''
 
     async def crawl(self, start_url):
