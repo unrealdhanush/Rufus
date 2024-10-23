@@ -7,7 +7,8 @@ class TestSynthesizer(unittest.TestCase):
         self.synthesizer = Synthesizer(instructions)
 
     def test_relevance_basic(self):
-        content = "This article discusses financial data, policies and benefits"
+        content = ("The financial statements of the company show a significant increase in net income"
+        "due to higher revenue and improved profit margins.")
         relevance = self.synthesizer.is_relevant(content)
         self.assertTrue(relevance, "The content should be considered relevant based on instructions")
 

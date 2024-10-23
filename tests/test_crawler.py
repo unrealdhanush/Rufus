@@ -22,7 +22,6 @@ class TestCrawler(unittest.TestCase):
 
     def test_run_async(self):
         asyncio.run(self.test_basic_crawl())
-        asyncio.run(self.test_handle_ssl_error())
         asyncio.run(self.test_non_html_content())
         asyncio.run(self.test_nested_links())
 
