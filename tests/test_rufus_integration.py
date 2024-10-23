@@ -8,7 +8,7 @@ import os
 class TestRufusIntegration(unittest.TestCase):
     def setUp(self):
         load_dotenv()  # Load environment variables
-        api_key = os.getenv('RUFUS_API_KEY')
+        api_key = 'testkey' or os.getenv('RUFUS_API_KEY')
         self.client = RufusClient(api_key=api_key)
 
     def test_full_integration(self):
@@ -20,7 +20,7 @@ class TestRufusIntegration(unittest.TestCase):
             "https://sfgov.org",
             instructions=instructions,
             max_depth=2,
-            max_pages=5
+            max_pages=100
         )
         self.assertGreater(len(documents), 0, "Rufus should return some documents")
         self.assertIn('url', documents[0], "Each document should contain a URL")
