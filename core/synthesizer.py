@@ -11,10 +11,9 @@ class Synthesizer:
         self.parser = Parser()
 
     def is_relevant(self, content):
-        content_embedding = self.model.encode(
-            content, convert_to_tensor=True, normalize_embeddings=True)
-        similarity_score = util.pytorch_cos_sim(
-            self.instruction_embedding, content_embedding)[0][0].item()
+        content_embedding = self.model.encode(content, convert_to_tensor=True, normalize_embeddings=True)
+        similarity_score = util.pytorch_cos_sim(self.instruction_embedding, content_embedding)[0][0].item()
+        print(f"Similarity Score: {similarity_score}")
         return similarity_score >= self.similarity_threshold
 
     def synthesize(self, pages):

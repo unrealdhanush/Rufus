@@ -13,7 +13,7 @@ class TestCrawler(unittest.TestCase):
         self.assertIn('html', result[0], "Each result should have HTML content")
 
     async def test_non_html_content(self):
-        result = await self.crawler.crawl('https://example.com/somefile.pdf')
+        result = await self.crawler.crawl('https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')
         self.assertEqual(len(result), 0, "Crawler should skip non-HTML content")
 
     async def test_nested_links(self):
