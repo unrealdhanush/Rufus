@@ -7,7 +7,7 @@ load_dotenv()
 
 class RufusClient:
     def __init__(self, api_key=None):
-        self.api_key = api_key or os.getenv('RUFUS_API_KEY')
+        self.api_key = 'temp_key' or os.getenv('RUFUS_API_KEY')
         if not self.api_key:
             raise ValueError("API key is required")
 

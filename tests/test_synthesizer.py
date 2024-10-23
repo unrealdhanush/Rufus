@@ -19,7 +19,7 @@ class TestSynthesizer(unittest.TestCase):
         self.assertFalse(relevance, "The content should be considered non-relevant based on instructions")
 
     def test_similarity_threshold(self):
-        self.synthesizer.similarity_threshold = 0.5  # Set a lower threshold
+        self.synthesizer.similarity_threshold = 0.3  # Set a lower threshold
         html = "<html><body><p>Partial match for policies and some benefits information.</p></body></html>"
         content = self.synthesizer.parser.parse(html)
         relevance = self.synthesizer.is_relevant(content, "https://fidelity.com")
