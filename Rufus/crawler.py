@@ -22,6 +22,8 @@ class Crawler:
                 if response.status == 200 and 'text/html' in response.headers.get('Content-Type', ''):
                     text = await response.text()
                     return text
+                else:
+                    print(f"Skipped non-HTML content at {url}")
         except Exception as e:
             print(f"Failed to fetch {url}: {e}")
             logger.error(f"Failed to fetch {url}: {e}")
@@ -38,6 +40,7 @@ class Crawler:
         if url in self.visited:
             return
         self.visited.add(url)
+        print(f"Crawling: {url}")
 
         html = await self.fetch(session, url)
         if not html:
