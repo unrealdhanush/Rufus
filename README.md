@@ -1,4 +1,4 @@
-# **RufusAI Documentation**
+# **RufusAIToolkit Documentation**
 
 ## **Table of Contents**
 
@@ -17,7 +17,7 @@
 
 ## **1. Introduction**
 
-**RufusAI** is an intelligent web crawler and data synthesizer designed to extract and structure information from various websites. Built with scalability and flexibility in mind, RufusAI seamlessly integrates into Retrieval-Augmented Generation (RAG) pipelines, enhancing data retrieval and processing capabilities for diverse applications.
+**RufusAIToolkit** is an intelligent web crawler and data synthesizer designed to extract and structure information from various websites. Built with scalability and flexibility in mind, RufusAIToolkit seamlessly integrates into Retrieval-Augmented Generation (RAG) pipelines, enhancing data retrieval and processing capabilities for diverse applications.
 
 ---
 
@@ -40,7 +40,7 @@
 ### **Install via PyPI**
 
 ```bash
-pip install rufusai
+pip install RufusAIToolkitToolkit==0.1.0
 ```
 
 ### **Clone the Repository (Optional)**
@@ -48,8 +48,8 @@ pip install rufusai
 If you prefer to install directly from the source:
 
 ```bash
-git clone https://github.com/yourusername/rufusai.git
-cd rufusai
+git clone https://github.com/unrealdhanush/RufusAIToolkitToolkit.git
+cd RufusAIToolkit
 pip install -e .
 ```
 
@@ -57,10 +57,10 @@ pip install -e .
 
 ### **Basic Crawling**
 
-Here's a simple example to get you started with RufusAI:
+Here's a simple example to get you started with RufusAIToolkit:
 
 ```python
-from rufusai.core.client import RufusClient
+from RufusAIToolkitToolkit.core.client import RufusClient
 import asyncio
 
 async def main():
@@ -82,10 +82,10 @@ if __name__ == "__main__":
 
 ### **Advanced Configuration**
 
-Customize RufusAI's behavior by adjusting parameters:
+Customize RufusAIToolkit's behavior by adjusting parameters:
 
 ```python
-from rufusai.core.client import RufusClient
+from RufusAIToolkit.core.client import RufusClient
 import asyncio
 
 async def main():
@@ -106,11 +106,11 @@ if __name__ == "__main__":
 
 ## **5. Integration into RAG Pipelines**
 
-Retrieval-Augmented Generation (RAG) pipelines benefit significantly from structured and relevant data. Here's how RufusAI can be integrated:
+Retrieval-Augmented Generation (RAG) pipelines benefit significantly from structured and relevant data. Here's how RufusAIToolkit can be integrated:
 
 ### **Architecture Overview**
 
-1. **Data Retrieval:** RufusAI crawls specified websites, extracting relevant information based on user instructions.
+1. **Data Retrieval:** RufusAIToolkit crawls specified websites, extracting relevant information based on user instructions.
 2. **Data Synthesis:** The extracted data is evaluated for relevance and structured into documents.
 3. **Knowledge Base Integration:** These documents are indexed and stored in a knowledge base (e.g., FAISS, Elasticsearch).
 4. **RAG Model Utilization:** The RAG model queries the knowledge base to retrieve relevant documents, enhancing the generation of accurate and context-aware responses.
@@ -120,7 +120,7 @@ Retrieval-Augmented Generation (RAG) pipelines benefit significantly from struct
 1. **Crawling and Data Extraction:**
 
    ```python
-   from rufusai.core.client import RufusClient
+   from RufusAIToolkit.core.client import RufusClient
    import asyncio
 
    async def crawl_data():
@@ -188,5 +188,5 @@ Retrieval-Augmented Generation (RAG) pipelines benefit significantly from struct
 *(Provide detailed documentation for each module, class, and method. Include parameters, return types, and examples.)*
 
 ## **7. License**
-RufusAI is distributed and protected under the standard MIT License.
+RufusAIToolkit is distributed and protected under the standard MIT License.
 
