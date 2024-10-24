@@ -9,8 +9,7 @@
    - [Basic Crawling](#basic-crawling)
    - [Advanced Configuration](#advanced-configuration)
 5. [Integration into RAG Pipelines](#5-integration-into-rag-pipelines)
-6. [API Reference](#6-api-reference)
-7. [License](#7-license)
+6. [License](#6-license)
 
 
 ---
@@ -183,10 +182,6 @@ Retrieval-Augmented Generation (RAG) pipelines benefit significantly from struct
 - **Scalability:** Efficient crawling and data processing allow handling large volumes of data.
 - **Flexibility:** Easily adjust crawling parameters and instructions to tailor data retrieval to specific needs.
 
-## **6. API Reference**
-
-*(Provide detailed documentation for each module, class, and method. Include parameters, return types, and examples.)*
-
-## **7. License**
+## **6. License**
 RufusAIToolkit is distributed and protected under the standard MIT License.
 
