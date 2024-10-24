@@ -183,5 +183,5 @@ Retrieval-Augmented Generation (RAG) pipelines benefit significantly from struct
 - **Flexibility:** Easily adjust crawling parameters and instructions to tailor data retrieval to specific needs.
 
 ## **6. License**
-RufusAIToolkit is distributed and protected under the standard MIT License.
+RufusAIToolkit is distributed and protected under the standard [MIT License](LICENSE)
 
